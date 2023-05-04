@@ -17,7 +17,7 @@ const Header = () => {
                  <li><a>Item 3</a></li>
              </ul>
          </div>
-         <a className="normal-case text-xl text-red-400">Savorify</a>
+         <a className="normal-case text-3xl font-bold text-red-400">Savorify</a>
       </div>
       <div className="navbar-center hidden lg:flex">
          <ul className="menu menu-horizontal px-1">
@@ -27,7 +27,7 @@ const Header = () => {
       </div>
       <div className="navbar-end">
          {
-         user?<Link>Logout</Link>:<Link to='/login'>Login</Link>
+         user?<Link>Logout</Link>:<Link className='bg-red-400 px-5 py-2 hover:bg-red-500 rounded-md text-white' to='/login'>Login</Link>
          }
       </div>
     </div>

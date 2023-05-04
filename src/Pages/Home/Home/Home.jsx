@@ -33,7 +33,7 @@ const Home = () => {
     //console.log(categories);
 
     if(dataLoading)
-    return <div className=' text-center'> <progress className="progress w-96  bg-red-400"></progress>loding.............</div>
+    return <div className=' text-center'><button className="btn loading bg-red-300">loading</button></div>
 
     return (
         <div className='home '>
