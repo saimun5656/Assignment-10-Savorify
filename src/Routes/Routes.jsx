@@ -4,6 +4,7 @@ import Home from "../Pages/Home/Home/Home";
 import Recipes from "../Pages/Recipes/Recipes";
 import Login from "../Pages/Login/Login/Login";
 import Register from "../Pages/Login/Register/Register";
+import Blog from "../Pages/Blog/Blog";
 
 const router=createBrowserRouter([
     {
@@ -28,6 +29,10 @@ const router=createBrowserRouter([
                 path:'/reg',
                 element:<Register></Register>
             },
+            {
+                path:'blog',
+                element:<Blog></Blog>
+            }
             
         ]
     }
