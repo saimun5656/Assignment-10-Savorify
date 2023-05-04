@@ -42,7 +42,7 @@ const Home = () => {
 
                 <h2 className='mb-5 font-semibold text-2xl'>our Chefs</h2>
 
-                <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
                             {
                                 chefs.map(cf => <ChefCard chef={cf}></ChefCard>)
                             }
@@ -60,7 +60,7 @@ const Home = () => {
  
                 <h1 className='mt-5 mb-5 font-semibold text-2xl'>Treading Recipes</h1>
 
-                <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
                        { recipess.map(rc=><RecipeCard key={rc.id} recipe={rc}></RecipeCard>)
                       }
                 </div>
