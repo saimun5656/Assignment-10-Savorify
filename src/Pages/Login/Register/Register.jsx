@@ -8,6 +8,7 @@ const Register = () => {
     const [error,setError]=useState('')
     const [success,setSuccess]=useState('')
     const handleSubmit=(e)=>{
+         setSuccess('')
          setError('')
          e.preventDefault();
          const form =e.target;
