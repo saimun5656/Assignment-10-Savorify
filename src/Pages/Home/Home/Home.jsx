@@ -39,8 +39,9 @@ const Home = () => {
                 chefs.map(cf=><ChefCard chef={cf}></ChefCard>)      
                 } 
             </div>
+            <h1 className='mt-5 font-semibold text-2xl'>Categores</h1>
+           <div className='categories-sec grid grid-cols-2 lg:grid-cols-4 gap-5 mt-5 w-11/12 mx-auto'>
 
-           <div className='categories-sec'>
                {
                 categories.map(ct=><CategoryCard key={ct.id} category={ct}></CategoryCard>)
                }
