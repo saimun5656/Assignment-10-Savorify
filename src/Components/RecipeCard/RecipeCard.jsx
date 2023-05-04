@@ -5,9 +5,10 @@ import { Link } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import { Rating } from '@smastrom/react-rating'
 import { ToastContainer, toast } from 'react-toastify';
+
 import 'react-toastify/dist/ReactToastify.css';
 import '@smastrom/react-rating/style.css'
-const RecipeCard = ({ recipe }) => {
+const RecipeCard = ({ recipe, }) => {
 const[isdisable,setDisable]=useState(false)
      const notify=()=>{
          setDisable(true)
@@ -26,6 +27,8 @@ const[isdisable,setDisable]=useState(false)
     
     const { cookingMethod, recipeName, recipeImg, ingredients, rating } = recipe
     console.log(recipe);
+    
+   
     return (
         <div className="rounded-lg shadow-md border border-gray-300 relative pb-2">
         
