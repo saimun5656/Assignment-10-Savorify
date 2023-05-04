@@ -4,7 +4,7 @@ import './Home.css'
 import ChefCard from './ChefCard/ChefCard';
 import CategoryCard from './ChefCard/CategoryCard/CategoryCard';
 import RecipeCard from '../../../Components/RecipeCard/RecipeCard';
-import TrendingCard from './TrendingCard/TrendingCard';
+
 const Home = () => {
     const [dataLoading,setDataLoading]=useState(true)
     const [chefs, setChefs] = useState([]);
