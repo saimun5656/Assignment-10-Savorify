@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import { signOut } from 'firebase/auth';
 
 const Header = () => {
-  const {user}=useContext(AuthContext)
+  const {user,logOut}=useContext(AuthContext)
  return (
   <div className='md:w-11/12 mx-auto'>
     <div className="navbar bg-base-100">
@@ -27,7 +28,7 @@ const Header = () => {
       </div>
       <div className="navbar-end">
          {
-         user?<Link>Logout</Link>:<Link className='bg-red-400 px-5 py-2 hover:bg-red-500 rounded-md text-white' to='/login'>Login</Link>
+         user?<button onClick={logOut} className='bg-red-400 px-5 py-2 hover:bg-red-500 rounded-md text-white'>Logout</button>:<Link className='bg-red-400 px-5 py-2 hover:bg-red-500 rounded-md text-white' to='/login'>Login</Link>
          }
       </div>
     </div>
