@@ -38,9 +38,7 @@ const Recipes = () => {
 
 
                     </div>
-                    <div className="mt-4">
-
-                    </div>
+                   
                 </div>
             </div>
 

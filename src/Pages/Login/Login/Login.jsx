@@ -1,8 +1,11 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Shared/AuthProvider/AuthProvider';
 
 const Login = () => {
+    const location=useLocation()
+    const navigate=useNavigate()
+    const from=location.state?.from||'/'
     const [error,setError]=useState('')
     const [success,setSuccess]=useState('')
     const {login, googleSignIn, githubSignIn,}=useContext(AuthContext)
@@ -14,10 +17,15 @@ const Login = () => {
          const email=form.email.value;
          const password=form.password.value;
          login(email,password)
-         .then(res=>setSuccess('user login successful'))
+         .then(res=>{
+            setSuccess('user login successful')
+            navigate(from)
+        })
+            
          .catch(err=>setError(err.message))
 
     }
+   // console.log(location);
  return (
   <div className="hero min-h-screen bg-base-200">
   <div className="hero-content flex-col lg:flex-row-reverse">
@@ -51,7 +59,7 @@ const Login = () => {
         <h1>Don't have an Account? please <Link className='text-red-400 hover:text-red-600 ms-2' to='/reg'>Register</Link></h1>
         <h1 className='text-red-500'>{error}</h1>
         <h1 className='text-green-500'>{success}</h1>
-        
+
       </form>
     </div>
   </div>
