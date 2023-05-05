@@ -4,14 +4,24 @@ import { FaRegHeart, FaUserClock } from 'react-icons/fa';
 import { MdRestaurantMenu } from "react-icons/md";
 import { Link } from 'react-router-dom';
 import RecipeCard from '../../Components/RecipeCard/RecipeCard';
+import { addToDB } from '../../Utilities/localstroage';
 const Recipes = () => {
-
+    
     const chef = useLoaderData();
 
-    const { bio, img, name, numOfLikes, numOfRecipes, yearsOfExperience, id } = chef
+    const { bio, img, name, numOfLikes, numOfRecipes, yearsOfExperience, id} = chef
     const recipes = (chef.recipes);
-
-    console.log(recipes);
+    
+    const handleAddtoDb=(recipeId,recipeName, recipeImg)=>{
+        const recipeobj={chefname:name,
+                         id:recipeId,
+                         recipeName:recipeName,
+                         recipeImg:recipeImg
+                        }
+                         console.log(recipeobj);
+        addToDB(recipeobj)
+    }
+    
     return (
         <div>
             <div className="md:grid grid-cols-5 w-11/12   mx-auto rounded-lg shadow-md border border-gray-300">
@@ -44,7 +54,7 @@ const Recipes = () => {
 
             <div className='w-11/12 mx-auto mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
                 {
-                    recipes.map((rc, idx) => <RecipeCard key={idx} recipe={rc}></RecipeCard>)
+                    recipes.map((rc, idx) => <RecipeCard key={idx} recipe={rc} handleAddtoDb={handleAddtoDb}></RecipeCard>)
                 }
             </div>
         </div>

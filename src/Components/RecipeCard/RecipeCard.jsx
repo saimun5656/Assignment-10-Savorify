@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaCaretRight, FaClipboardList } from 'react-icons/fa';
 import { MdRestaurantMenu } from "react-icons/md";
 import { Link } from 'react-router-dom';
@@ -8,9 +8,53 @@ import { ToastContainer, toast } from 'react-toastify';
 import LazyLoad from 'react-lazy-load';
 import 'react-toastify/dist/ReactToastify.css';
 import '@smastrom/react-rating/style.css'
-const RecipeCard = ({ recipe, }) => {
+import { getrecipe } from '../../Utilities/localstroage';
+
+const RecipeCard = ({ recipe, handleAddtoDb}) => {
     const [isdisable, setDisable] = useState(false)
+    //const favs=getrecipe()
+    const { cookingMethod, recipeName, recipeImg, ingredients, rating ,id} = recipe
+
+
+    useEffect(()=>{
+        const favs=getrecipe()
+        for(const fav of favs){
+               if(fav.recipeName===recipeName){
+                  console.log(fav.recipeName);
+                  setDisable(true)
+                  
+             }
+            
+        }
+    },[])    
+    // favs.map(fav=>{
+    //     useEffect(()=>{
+    //         if(fav.recipeName===recipeName){
+    //            // setDisable(true)
+    //         }
+    //     },[])
+    //      if(fav.recipeName===recipeName){
+    //       useEffect(()=>{
+    //              setDisable(true)
+    //          },[])
+    //               setDisable(true)
+    //     }
+    // })
+
+
+    //  for(const fav of favs){
+    //       if(fav.recipeName===recipeName){
+    //          console.log(fav.recipeName);
+    //          setDisable(true)
+    //          break
+    //     }
+    //     else break
+    // }
+
+
+
     const notify = () => {
+        handleAddtoDb?handleAddtoDb(id,recipeName,recipeImg):''
         setDisable(true)
         toast.success('the recipe is your favorite', {
             position: "top-center",
@@ -24,9 +68,8 @@ const RecipeCard = ({ recipe, }) => {
         });
     }
 
-
-    const { cookingMethod, recipeName, recipeImg, ingredients, rating } = recipe
-    // console.log(recipe);
+    
+   
 
 
     return (

@@ -30,7 +30,7 @@ const Header = () => {
       <div className="navbar-end">
          <img className='w-10 me-2 rounded-full' title={user?.displayName?user.displayName:''} src={`${user?.photoURL?user.photoURL:'https://png.pngtree.com/png-vector/20191009/ourmid/pngtree-user-icon-png-image_1796659.jpg'}`} alt="" />
          {
-         user?<button onClick={logOut} className='bg-red-400 px-5 py-2 hover:bg-red-500 rounded-md text-white me-2'>Logout</button>:<Link className='bg-red-400 px-5 py-2  hover:bg-red-500 rounded-md text-white' to='/login'>Login</Link>
+         user?<button onClick={logOut} className='bg-red-400 px-5 py-2 hover:bg-red-500 rounded-md text-white me-2'>Logout</button>:<Link className='bg-red-400 px-5 py-2 me-2  hover:bg-red-500 rounded-md text-white' to='/login'>Login</Link>
          }
       </div>
     </div>
