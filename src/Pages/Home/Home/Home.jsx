@@ -13,7 +13,6 @@ const Home = () => {
     useEffect(() => {
            setDataLoading(true)
             fetch('https://assignmet-10-chef-recipe-hunter-server-side-saimun5656.vercel.app/chefs')
-            //fetch('http://localhost:5000/chefs')
             .then(res => res.json())
             .then(data => setChefs(data))
             .catch(err => console.log(err))
@@ -29,16 +28,16 @@ const Home = () => {
             .catch(err => console.log(err))
             setDataLoading(false)
     }, [])
-    console.log(dataLoading);
+    //  console.log(dataLoading);
     //console.log(categories);
 
     if(dataLoading)
     return <div className=' text-center'><button className="btn loading bg-red-300">loading</button></div>
 
     return (
-        <div className='home '>
+        <div className=''>
             <Banner></Banner>
-            <div className='md:w-11/12 mx-auto  '>
+            <div className='w-11/12 mx-auto  '>
 
                 <h2 className='mb-5 font-semibold text-2xl'>our Chefs</h2>
 

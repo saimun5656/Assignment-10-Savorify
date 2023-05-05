@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import { Rating } from '@smastrom/react-rating'
 import { ToastContainer, toast } from 'react-toastify';
-
+import LazyLoad from 'react-lazy-load';
 import 'react-toastify/dist/ReactToastify.css';
 import '@smastrom/react-rating/style.css'
 const RecipeCard = ({ recipe, }) => {
@@ -14,7 +14,7 @@ const RecipeCard = ({ recipe, }) => {
         setDisable(true)
         toast.success('the recipe is your favorite', {
             position: "top-center",
-            autoClose: 5000,
+            autoClose: 1000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
@@ -26,13 +26,14 @@ const RecipeCard = ({ recipe, }) => {
 
 
     const { cookingMethod, recipeName, recipeImg, ingredients, rating } = recipe
-    console.log(recipe);
+    // console.log(recipe);
 
 
     return (
         <div className="rounded-lg shadow-md border border-gray-300 relative pb-2">
-
+            <LazyLoad  height={240}  width='100%' threshold={1}>
             <img className="h-64 w-full object-cover rounded-t-md " src={recipeImg} alt="Chef Picture" />
+            </LazyLoad>
             <div className=" p-4 card-body rounded-b-md">
 
                 <h2 className="text-xl font-semibold text-gray-800">{recipeName}</h2>
@@ -54,7 +55,7 @@ const RecipeCard = ({ recipe, }) => {
                         </div>
                         <div>
                             <button disabled={isdisable} onClick={notify} className='disabled:opacity-50 bg-red-400 py-3 px-5 rounded-md text-white'>+ Favourite</button>
-                            <ToastContainer />
+                            <ToastContainer  className='w-52'/>
                         </div>
                     </div>
                 </div>

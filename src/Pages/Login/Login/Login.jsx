@@ -9,6 +9,14 @@ const Login = () => {
     const [error,setError]=useState('')
     const [success,setSuccess]=useState('')
     const {login, googleSignIn, githubSignIn,}=useContext(AuthContext)
+    const handlegoogle=()=>{
+        googleSignIn()
+        .then(res=>navigate(from))
+    }
+    const handleGithubSignin=()=>{
+      githubSignIn()
+      .then(res=>navigate(from))
+    }
     const handleonSubmit=(e)=>{
          setSuccess('')
          setError('')
@@ -54,8 +62,8 @@ const Login = () => {
           <button className="btn btn-primary">Login</button>
         </div>
 
-        <button onClick={googleSignIn} className="btn btn-primary mt-5">Sign in With Google</button>
-        <button onClick={githubSignIn} className="btn btn-primary mt-5">Sign in With Github</button>
+        <button onClick={handlegoogle} className="btn btn-primary mt-5">Sign in With Google</button>
+        <button onClick={handleGithubSignin} className="btn btn-primary mt-5">Sign in With Github</button>
         <h1>Don't have an Account? please <Link className='text-red-400 hover:text-red-600 ms-2' to='/reg'>Register</Link></h1>
         <h1 className='text-red-500'>{error}</h1>
         <h1 className='text-green-500'>{success}</h1>

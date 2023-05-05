@@ -1,8 +1,13 @@
 import React from 'react';
-
+import Pdf from "react-to-pdf";
+const ref = React.createRef();
 const Blog = () => {
     return (
-        <div className='md:w-11/12 mx-auto ms-6 me-4 mt-5'>
+    <div  className='w-11/12 mx-auto  mt-5'>
+         <Pdf  targetRef={ref} filename="Assignment-blog-@saimun.pdf" x={0.3} y={.9} scale={0.9}>
+        {({ toPdf }) => <button className='bg-red-400 px-4 py-2 text-white font-bold rounded-md shadow-md hover:scale-110 mb-5 hover:translate-x-2' onClick={toPdf}>Generate Pdf</button>}
+         </Pdf>
+         <div ref={ref}>
             <h1><b>1. Tell us the differences between uncontrolled and controlled components</b></h1>
             <p><b>ans :</b>Controlled components are form inputs in React that are managed by React state. This means that React updates the input value in response to user input and the component's state reflects the current input value. Controlled components use onChange events to handle user input.<br/>
 
@@ -20,6 +25,8 @@ Express.js is a web application framework that i </p>
            <h1><b>4. What is a custom hook, and why will you create a custom hook</b></h1>
            <p><b>ans :</b> A custom hook in React is a type of JavaScript function that enables you to reuse a particular logic or behavior across different components in your application. Custom hooks are created by extracting stateful logic from a component into a reusable function, which can then be shared and reused in other components.</p>
         </div>
+    </div>
+       
     );
 };
 

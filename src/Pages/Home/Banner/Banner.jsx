@@ -2,8 +2,8 @@ import React from 'react';
 
 const Banner = () => {
     return (
-        <div className=' md:h-screen mb-12'>
-            <div className="relative bg-gray-800 md:h-5/6 h-96	">
+        <div className=' md:h-screen mb-5'>
+            <div className="relative bg-gray-800 md:h-5/6 h-80">
                 <div className="absolute inset-0 ">
                     <img className='w-full h-full rounded' src="https://img.freepik.com/free-photo/thanksgiving-day-meal-with-copy-space_23-2149100124.jpg?w=2000&t=st=1683095579~exp=1683096179~hmac=c3d9573a8f07093814c223722ff041a6b38ed5676dae81c8f7474b0fc201e670" alt="" />
                 </div>

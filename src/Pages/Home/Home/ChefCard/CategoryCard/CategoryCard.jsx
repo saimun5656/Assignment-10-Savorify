@@ -2,7 +2,7 @@ import React from 'react';
 
 const CategoryCard = ({category}) => {
     const{name,img, numOfRecipes}=category
-    console.log(img);
+    // console.log(img);
     return (
         <div className=' rounded shadow-md transition duration-500 ease-in-out transform hover:scale-110'>
             <img className='w-full h-full relative transition duration-500 ease-in-out transform hover:scale-110 z-0  rounded-md' src={img} alt="" />

@@ -3,11 +3,14 @@ import './ChefCard.css'
 import { FaRegHeart, FaUserClock} from 'react-icons/fa';
 import { MdRestaurantMenu } from "react-icons/md";
 import { Link } from 'react-router-dom';
+import LazyLoad from 'react-lazy-load';
 const ChefCard = ({chef}) => {
     const{img, name, numOfLikes ,numOfRecipes, yearsOfExperience,id}=chef
     return (
         <div className="rounded-lg shadow-md border border-gray-300">
+            <LazyLoad  height={240}  width='100%' threshold={0.95} onContentVisible={() => {console.log('loaded!')}}>
             <img className="h-64 w-full object-cover rounded-t-md " src={img}alt="Chef Picture" />
+            </LazyLoad>
             <div className=" p-4 card-body rounded-b-md">
                 <h2 className="text-xl font-semibold text-gray-800">{name}</h2>
                 <div className="flex items-center justify-between mt-2 text-gray-600">
