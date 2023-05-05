@@ -12,7 +12,7 @@ const Banner = () => {
                         <div id="slide1" className="carousel-item relative w-full">
                           <div className='text-white w-10/12 mx-auto text-center'>
                           <h1 >Slide-1 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias repudiandae quia in cupiditate nemo? Itaque cumque illum pariatur odio </h1>
-                           <input className='bg-white rounded-l p-4 mt-4' type="text" name="" id="" placeholder='Search Recipe'/>
+                           <input className='bg-white rounded-l p-4 mt-4 w-40' type="text" name="" id="" placeholder='Search Recipe'/>
                            <button className='bg-red-400 p-4 rounded-r'>Search</button>
                           </div>   
 
@@ -24,7 +24,7 @@ const Banner = () => {
 
                         <div id="slide2" className="carousel-item relative w-full">
                         <div className='text-white w-10/12 mx-auto text-center'>
-                          <h1 >Slide-2 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias repudiandae quia in cupiditate nemo? Itaque cumque illum pariatur odio magnam earum provident vel inventore doloremque cum, incidunt at, et dolores!</h1>
+                          <h1 >Slide-2 Lorem, ipsum dolor sit amet consectetur adipisicin odio magnam earum provident vel inventore doloremque cum, incidunt at, et dolores!</h1>
                            <input className='bg-white text-gray-900 rounded-l p-4 mt-4' type="text" name="" id="" placeholder='Search Recipe'/>
                            <button className='bg-red-400 p-4 rounded-r'>Search</button>
                           </div>   
@@ -34,14 +34,14 @@ const Banner = () => {
                             </div>
                         </div>
                         <div id="slide3" className="carousel-item relative w-full">
-                           <h1 className='text-white w-10/12 mx-auto'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias repudiandae quia in cupiditate nemo? Itaque cumque illum pariatur odio magnam earum provident vel inventore doloremque cum, incidunt at, et dolores!</h1>
+                           <h1 className='text-white w-10/12 mx-auto'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias repudiandae quia in cupiditate nemo? Itaque </h1>
                             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                                 <a href="#slide2" className="text-white">❮❮</a>
                                 <a href="#slide4" className="text-white">❯❯</a>
                             </div>
                         </div>
                         <div id="slide4" className="carousel-item relative w-full">
-                           <h1 className='text-white w-10/12 mx-auto'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias repudiandae quia in cupiditate nemo? Itaque cumque illum pariatur odio magnam earum provident vel inventore doloremque cum, incidunt at, et dolores!</h1>
+                           <h1 className='text-white w-10/12 mx-auto'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias repudiandae quia in cupiditate nemo? Itaque  et dolores!</h1>
                             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                                 <a href="#slide3" className="text-white">❮❮</a>
                                 <a href="#slide5" className="text-white">❯❯</a>

@@ -1,14 +1,15 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Shared/AuthProvider/AuthProvider';
 
 const Login = () => {
+    const emailref=useRef()
     const location=useLocation()
     const navigate=useNavigate()
     const from=location.state?.from||'/'
     const [error,setError]=useState('')
     const [success,setSuccess]=useState('')
-    const {login, googleSignIn, githubSignIn,}=useContext(AuthContext)
+    const {login, googleSignIn, githubSignIn, passwordreset}=useContext(AuthContext)
     const handlegoogle=()=>{
         googleSignIn()
         .then(res=>navigate(from))
@@ -47,7 +48,7 @@ const Login = () => {
           <label className="label">
             <span className="label-text">Email</span>
           </label>
-          <input type="email" placeholder="email" name='email' required className="input input-bordered" />
+          <input type="email" placeholder="email" name='email' required className="input input-bordered"  ref={emailref} />
         </div>
         <div className="form-control">
           <label className="label">
@@ -55,7 +56,7 @@ const Login = () => {
           </label>
           <input type="password" placeholder="password" name='password' required className="input input-bordered" />
           <label className="label">
-            <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+            <button onClick={()=> {console.log(emailref.current.value); passwordreset(emailref.current.value);alert('email sended')}}href="#" className="label-text-alt link link-hover">Forgot password?</button>
           </label>
         </div>
         <div className="form-control mt-6">
